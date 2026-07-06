@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Courage Managérial — Réconcilier bienveillance et exigence | Valeurs & Talents</title>
+<meta name="description" content="Formation présentielle de 4h pour managers : réconcilier bienveillance et exigence. Le 7 juillet 2026 à Carquefou.">
+<style>
+  :root {
+    --vert: #94c11f;
+    --vert-clair: #eef6da;
+    --marron: #473c32;
+    --orange: #ee7601;
+    --blanc: #ffffff;
+    --texte: #201b16;
+    --gris-bord: #e3ddd2;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  body {
+    margin: 0;
+    font-family: Calibri, Candara, "Segoe UI", Optima, Arial, sans-serif;
+    color: var(--texte);
+    background: var(--blanc);
+    line-height: 1.6;
+    font-size: 18px;
+  }
+
+  a { color: var(--marron); }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 2px;
+  }
+
+  .skip-link {
+    position: absolute; left: -999px; top: 0;
+    background: var(--marron); color: #fff; padding: 10px 16px; z-index: 100;
+  }
+  .skip-link:focus { left: 10px; top: 10px; }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* HEADER */
+  header.hero {
+    background: var(--vert-clair);
+    border-bottom: 4px solid var(--vert);
+    padding: 48px 0 40px;
+  }
+  .hero-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .logo-slot img {
+    max-height: 64px;
+    display: block;
+  }
+  .logo-slot {
+    font-weight: bold;
+    color: var(--marron);
+    font-size: 1.1rem;
+  }
+  h1 {
+    color: var(--marron);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 0 0 10px;
+    line-height: 1.2;
+  }
+  .accroche {
+    font-size: 1.25rem;
+    color: var(--texte);
+    margin: 0 0 24px;
+    max-width: 60ch;
+  }
+  .meta-pratique {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-size: 1rem;
+  }
+  .meta-pratique div { display: flex; align-items: baseline; gap: 8px; }
+  .meta-pratique strong { color: var(--marron); }
+
+  /* SIGNATURE : la balance */
+  .balance-wrap {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+  }
+  .balance-caption {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--marron);
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* SECTIONS */
+  section { padding: 48px 0; }
+  section.alt { background: #fbfaf7; }
+  h2 {
+    color: var(--marron);
+    font-size: 1.6rem;
+    border-left: 6px solid var(--orange);
+    padding-left: 14px;
+    margin-bottom: 28px;
+  }
+
+  /* ACCORDEON */
+  details.module {
+    border: 1px solid var(--gris-bord);
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+    background: var(--blanc);
+    overflow: hidden;
+  }
+  details.module[open] { border-color: var(--vert); }
+  summary.module-head {
+    cursor: pointer;
+    list-style: none;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-weight: bold;
+    color: var(--marron);
+  }
+  summary.module-head::-webkit-details-marker { display: none; }
+  summary.module-head .horaire {
+    color: var(--vert);
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    background: var(--vert-clair);
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  summary.module-head::after {
+    content: "+";
+    font-size: 1.4rem;
+    color: var(--orange);
+    margin-left: 8px;
+  }
+  details.module[open] summary.module-head::after { content: "–"; }
+  .module-body {
+    padding: 0 20px 20px;
+    border-top: 1px solid var(--gris-bord);
+  }
+  .module-body p { margin: 12px 0 4px; }
+  .module-body .label { color: var(--marron); font-weight: bold; }
+
+  /* VIDEO */
+  .video-frame {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--gris-bord);
+  }
+  .video-frame iframe {
+    position: absolute; top:0; left:0; width:100%; height:100%; border:0;
+  }
+
+  /* MAP */
+  .map-frame {
+    width: 100%;
+    height: 320px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--gris-bord);
+  }
+  .map-frame iframe { width:100%; height:100%; border:0; }
+  address {
+    font-style: normal;
+    margin-top: 14px;
+    color: var(--marron);
+  }
+
+  /* DOWNLOADS */
+  .downloads { display: flex; gap: 18px; flex-wrap: wrap; }
+  .btn-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--orange);
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: var(--radius);
+    font-weight: bold;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  .btn-pdf:hover { background: #d46700; }
+  .btn-pdf:active { transform: translateY(1px); }
+  .btn-pdf svg { flex-shrink: 0; }
+
+  /* FOOTER */
+  footer {
+    background: var(--marron);
+    color: #f4f1ea;
+    padding: 40px 0;
+    font-size: 0.95rem;
+  }
+  footer a { color: var(--vert); }
+  footer h2 {
+    color: #fff;
+    border-left-color: var(--vert);
+  }
+  .footer-grid {
+    display: grid;
+    gap: 6px;
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 16.5px; }
+    .meta-pratique { flex-direction: column; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#programme" class="skip-link">Aller au contenu principal</a>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-top">
+      <div class="logo-slot">
+        <img src="logo.png" alt="Logo Valeurs & Talents" onerror="this.style.display='none'; this.parentElement.textContent='Valeurs & Talents';">
+      </div>
+    </div>
+
+    <h1>Le Courage Managérial</h1>
+    <p class="accroche">Réconcilier bienveillance et exigence : une formation concrète pour oser dire, cadrer et décider — sans renier qui vous êtes.</p>
+
+    <div class="meta-pratique">
+      <div><strong>Date :</strong> 7 juillet 2026</div>
+      <div><strong>Horaires :</strong> 8h30 – 12h30</div>
+      <div><strong>Lieu :</strong> Carquefou (44)</div>
+      <div><strong>Format :</strong> Présentiel</div>
+    </div>
+
+    <div class="balance-wrap">
+      <svg width="320" height="140" viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration d'une balance en équilibre entre bienveillance et exigence">
+        <line x1="160" y1="20" x2="160" y2="115" stroke="#473c32" stroke-width="6" stroke-linecap="round"/>
+        <line x1="45" y1="35" x2="275" y2="35" stroke="#473c32" stroke-width="5" stroke-linecap="round"/>
+        <line x1="45" y1="35" x2="45" y2="65" stroke="#94c11f" stroke-width="3"/>
+        <line x1="275" y1="35" x2="275" y2="65" stroke="#ee7601" stroke-width="3"/>
+        <path d="M 20 65 A 25 25 0 0 0 70 65 Z" fill="#94c11f" opacity="0.85"/>
+        <path d="M 250 65 A 25 25 0 0 0 300 65 Z" fill="#ee7601" opacity="0.85"/>
+        <circle cx="160" cy="20" r="8" fill="#473c32"/>
+        <rect x="140" y="112" width="40" height="10" rx="3" fill="#473c32"/>
+        <text x="45" y="100" text-anchor="middle" font-size="13" fill="#473c32" font-family="Calibri, Arial, sans-serif" font-weight="bold">Bienveillance</text>
+        <text x="275" y="100" text-anchor="middle" font-size="13" fill="#473c32" font-family="Calibri, Arial, sans-serif" font-weight="bold">Exigence</text>
+      </svg>
+    </div>
+    <p class="balance-caption">Le courage managérial, c'est tenir les deux plateaux à la fois.</p>
+  </div>
+</header>
+
+<main>
+  <section id="programme">
+    <div class="container">
+      <h2>Programme de la matinée</h2>
+
+      <details class="module" open>
+        <summary class="module-head">
+          <span>Introduction</span>
+          <span class="horaire">8h30 – 8h50</span>
+        </summary>
+        <div class="module-body">
+          <p><span class="label">Objectif :</span> Créer un climat de confiance, recueillir les attentes, présenter les objectifs.</p>
+          <p><span class="label">Déroulement :</span> Présentation croisée et recueil des attentes, via un icebreaker dynamique.</p>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary class="module-head">
+          <span>Les essentiels</span>
+          <span class="horaire">8h50 – 9h30</span>
+        </summary>
+        <div class="module-body">
+          <p><span class="label">Objectif :</span> Comprendre les concepts clés : autorité vs autoritarisme, cadre managérial, légitimité.</p>
+          <p><span class="label">Déroulement :</span> Apports théoriques structurés (couleurs du manager, pyramide de Maslow, fiche de poste).</p>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary class="module-head">
+          <span>Classe inversée : analyse de situations</span>
+          <span class="horaire">9h30 – 10h10</span>
+        </summary>
+        <div class="module-body">
+          <p><span class="label">Objectif :</span> Analyser des situations concrètes et proposer des alternatives courageuses et structurantes.</p>
+          <p><span class="label">Déroulement :</span> Pré-lecture de fiches puis travail collaboratif en sous-groupes sur des cas pratiques.</p>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary class="module-head">
+          <span>Pause</span>
+          <span class="horaire">10h10 – 10h30</span>
+        </summary>
+        <div class="module-body">
+          <p>Temps de pause.</p>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary class="module-head">
+          <span>Restitution des classes inversées</span>
+          <span class="horaire">10h30 – 11h15</span>
+        </summary>
+        <div class="module-body">
+          <p><span class="label">Objectif :</span> Analyser des situations concrètes et proposer des alternatives courageuses.</p>
+          <p><span class="label">Déroulement :</span> Présentation des travaux de groupe, complétée par les apports du formateur, en plénière.</p>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary class="module-head">
+          <span>Focus sur la posture d'autorité</span>
+          <span class="horaire">11h15 – 12h10</span>
+        </summary>
+        <div class="module-body">
+          <p><span class="label">Objectif :</span> Adopter une posture d'autorité juste et bienveillante, en mobilisant la voix, le regard et la posture.</p>
+          <p><span class="label">Déroulement :</span> Mises en situation jouées, travaillées collectivement en plénière.</p>
+        </div>
+      </details>
+
+      <details class="module">
+        <summary class="module-head">
+          <span>Conclusion & mise en action</span>
+          <span class="horaire">12h10 – 12h20</span>
+        </summary>
+        <div class="module-body">
+          <p><span class="label">Objectif :</span> Évaluer la formation, extraire un apprentissage clé, définir un engagement personnel.</p>
+          <p><span class="label">Déroulement :</span> Post-it, tour de table et plan d'action individuel.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <section class="alt" id="mot-du-formateur">
+    <div class="container">
+      <h2>Le mot du formateur</h2>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/peXly3YvLOU"
+          title="Mot du formateur — Le Courage Managérial"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="lieu">
+    <div class="container">
+      <h2>Lieu de la formation</h2>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=3ter+avenue+des+villages+44470+Carquefou&output=embed"
+          title="Carte du lieu de formation : 3ter avenue des Villages, 44470 Carquefou"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <address>3ter avenue des Villages, 44470 Carquefou</address>
+    </div>
+  </section>
+
+  <section class="alt" id="telechargements">
+    <div class="container">
+      <h2>Documents à télécharger</h2>
+      <div class="downloads">
+        <a class="btn-pdf" href="programme.pdf" download>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+          Télécharger le programme (PDF)
+        </a>
+        <a class="btn-pdf" href="livret-stagiaire.pdf" download>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+          Télécharger le livret stagiaire (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <h2>Contact & informations</h2>
+    <div class="footer-grid">
+      <p><strong>Formateur :</strong> Mickaël Loeuille</p>
+      <p><strong>Email :</strong> <a href="mailto:mickael.loeuille@gmail.com">mickael.loeuille@gmail.com</a></p>
+      <p><strong>Téléphone :</strong> <a href="tel:+33681255388">06 81 25 53 88</a></p>
+      <p style="margin-top:12px; opacity:0.85;">Formation dispensée par Valeurs & Talents.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
